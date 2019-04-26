@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import WarsCharCard from "./components/WarsCharCard"
+
 class App extends Component {
   constructor() {
     super();
