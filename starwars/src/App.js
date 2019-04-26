@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import WarsCharCard from "./components/WarsCharCard"
+
 class App extends Component {
   constructor() {
     super();
@@ -22,20 +24,39 @@ class App extends Component {
         return res.json();
       })
       .then(data => {
-        this.setState({ starwarsChars: data.results });
+        this.setState({ 
+          starwarsChars: data.results,
+          next: data.next,
+          previous: data.previous        
+        });
       })
       .catch(err => {
         throw new Error(err);
       });
   };
 
+  loadNextPage = () => {
+    this.getCharacters(this.state.next);
+  }
+
+  loadPrevPage = () => {
+    this.getCharacters(this.state.previous);
+  }
+
   render() {
     return (
       <div className="App">
         <h1 className="Header">React Wars</h1>
+        <WarsCharCard data={this.state.starwarsChars} />
+        <div className='pagination-container'>
+          {this.state.previous === null ? null : (<button className='pagination' onClick={this.loadPrevPage}>Previous</button>)}
+          {this.state.next === null ? null : (<button className='pagination' onClick={this.loadNextPage}>Next</button>)}
+        </div>
       </div>
     );
   }
 }
 
 export default App;
+
+// comment to get 1st commit

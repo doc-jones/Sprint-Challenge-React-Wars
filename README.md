@@ -25,12 +25,16 @@ In this challenge, create a web page that presents a styled list of Star Wars ch
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What is React JS and what problems does it try and solve? Support your answer with concepts introduced in class and from your personal research on the web.
+React is a UI library developed by Facebook that is now open source. React builds independent and reusable components and is faster than other frameworks because it uses the Virtual DOM. The following short video helped me to understand the Virtual DOM and how it works. https://www.youtube.com/watch?v=BYbgopx44vo
 
-- [ ] What does it mean to _think_ in react?
+- [ ] What does it mean to think in react?
+ Looking at a web design document one visually breaks down the content into components, arranges them into a tree structure and then determines which components in the tree will need props and which will hold state.
 
-- [ ] Describe state.
+- [ ]  Describe state.
+ State is the data that a component maintains.
 
 - [ ] Describe props.
+ Properties, referred to as props, are how the data is shared among and across components and are unchangeable inside a component. They flow from parent to child and never the reverse. Examples: href inside an anchor tag, src inside an img tag
 
 ## Project Set Up
 
